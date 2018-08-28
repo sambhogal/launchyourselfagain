@@ -1,0 +1,9 @@
+{% extends 'BaseApp/base.html' %}
+    {% block body_block %}
+        <div class="container">
+            <form method="POST">
+                {{ user_form.as_p }}
+                {{ user_info_form.as_p }}
+            </form>
+        </div>
+    {% endblock %}
