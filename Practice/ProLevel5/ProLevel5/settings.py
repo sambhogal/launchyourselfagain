@@ -80,12 +80,20 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ly',
-        'USER': 'root',
+        'USER': 'admin',
         'PASSWORD': 'Launchyourself@123',
         'HOST' : 'localhost',
         'PORT' : '3306',
     }
 }
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
 
 
 # Password validation
@@ -128,3 +136,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+
+LOGIN_URL = '/BaseApp/login/'

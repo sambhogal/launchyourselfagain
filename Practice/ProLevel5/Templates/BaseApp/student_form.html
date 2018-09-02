@@ -1,0 +1,17 @@
+{% extends 'BaseApp/base.html' %}
+    {% block body_block %}
+
+        <div class="container">
+            {% if not form.instance.pk %}
+                Create Student
+            {% else %}
+                This page is under construction
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {% endblock %}

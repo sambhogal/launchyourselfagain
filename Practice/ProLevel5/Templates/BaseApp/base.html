@@ -15,6 +15,13 @@
                     <li> <a class="navbar-link" href="{% url 'index_url' %}">Launch Yourself</a></li>
                     <li> <a class="navbar-link"  href="{% url 'admin:index' %}">Adminstrator Console</a></li>
                     <li> <a class="navbar-link"  href="{% url 'base_app:register_url' %}">Register</a></li>
+
+                    {% if user.is_authenticated %}
+                        <li> <a class="navbar-link"  href="{% url 'base_app:logout_url' %}">Logout</a></li>
+                    {% else %}
+                        <li> <a class="navbar-link"  href="{% url 'base_app:login_url' %}">Login</a></li>
+                    {% endif %}    
+
                 </ul>
             </div>
         </nav>

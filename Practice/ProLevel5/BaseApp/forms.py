@@ -4,14 +4,14 @@ from BaseApp.models import UserInformation
 
 class UserForm(forms.ModelForm):
 
-#    password = forms.CharField(widget=forms.PasswordInput())
+    password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
         model = User
-        fields = ('username','password','email')
+        fields = ('username','password')
 
 class UserInformationForm(forms.ModelForm):
 
     class Meta:
         model = UserInformation
-        fields = ('email','age','description','image')
+        fields = ('age','description','image')

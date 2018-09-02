@@ -19,6 +19,7 @@ from BaseApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'^$',views.index,name='index_url'),
+    #re_path(r'^$',views.index,name='index_url'),
+    re_path(r'^$',views.index.as_view(),name='index_url'),
     re_path(r'^BaseApp/',include('BaseApp.urls')),
 ]
