@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from BaseApp.models import UserInformation
+from BaseApp.models import UserInformation, ModelDatabase
 
 class UserForm(forms.ModelForm):
 
@@ -15,3 +15,9 @@ class UserInformationForm(forms.ModelForm):
     class Meta:
         model = UserInformation
         fields = ('age','description','image')
+
+class ModelDatabaseForm(forms.ModelForm):
+
+    class Meta:
+        model = ModelDatabase
+        fields = ('label','name')

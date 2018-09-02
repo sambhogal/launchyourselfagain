@@ -1,0 +1,16 @@
+{% extends 'BaseApp/base.html' %}
+    {% block body_block %}
+        <div class="container">
+            {% if not forms.instance.pk %}
+                Create Database Fields
+            {% else %}
+                This page is under construction
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    {% endblock %}
