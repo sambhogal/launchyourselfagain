@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'BaseApp.createdbobject.CreateDBObject',
 ]
 
 ROOT_URLCONF = 'ProLevel5.urls'
