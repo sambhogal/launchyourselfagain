@@ -66,15 +66,25 @@ class CreateModelDatabaseFields(CreateView):
     model = ModelDatabaseField
 
 
+
 ###################################OLD EXERCISES############################
 
 class CreateSchool(CreateView):
     fields = ('school_name','school_location','principal','school_email')
     model = School
+    # print('\n\n')
+    # def getData(self):
+    #     print(self.request)
+
 
 class CreateStudent(CreateView):
     fields = ('school','student_name','student_age','student_gender')
     model = Student
+
+    print('*****Student created and activate middleware ')
+
+
+
 
 class ClassBasedView(View):
     def get(self,request):

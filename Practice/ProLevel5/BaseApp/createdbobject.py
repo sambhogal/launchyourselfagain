@@ -7,8 +7,20 @@ class CreateDBObject(object):
 
     def __call__(self, request):
         print("IN CALL FUNCTION")
+        print("Request attributes : "+ str(request.method))
+        # print("Request attributes : "+ str(request.current_app))
+        # print("Request attributes : "+ str(request.urlconf))
+        # print("Request attributes : "+ str(request.site))
+        print("Request attributes : "+ str(request.get_host()))
+        print("Request username : "+ str(request.POST.get('username')))
+        print(list(request.POST.items()))
+        print('For loop start')
+        for x in request.POST.items():
+            print(x)
+        print("Request attributes : "+ str(request.path_info))
+        # print("Request body : "+ str(request.body))
         response = self.get_response(request)
-
+        #   print('What is response '+ str(response.content))
         print("IN CALL FUNCTION 222222222222222222\n")
         print(response.status_code)
         ###Code below is not working -- seems like process_response is deprecated?
