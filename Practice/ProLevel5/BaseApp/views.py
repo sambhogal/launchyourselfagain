@@ -20,7 +20,10 @@ def createTableinDB(str_appName):
     # str_appName = getAppName()
     from django.db import connection
     with connection.cursor() as cursor:
-        cursor.execute("create table {}(tutorial_id INT NOT NULL AUTO_INCREMENT,tutorial_title VARCHAR(100) NOT NULL,tutorial_author VARCHAR(40) NOT NULL,PRIMARY KEY ( tutorial_id ))".format(str_appName))
+        # SqlLite
+        cursor.execute("create table {}".format(str_appName))
+        # MySQL
+        # cursor.execute("create table {}(tutorial_id INT NOT NULL AUTO_INCREMENT,tutorial_title VARCHAR(100) NOT NULL,tutorial_author VARCHAR(40) NOT NULL,PRIMARY KEY ( tutorial_id ))".format(str_appName))
         # cursor.execute("UPDATE bar SET foo = 1 WHERE baz = %s", [self.baz])
         # cursor.execute("SELECT foo FROM bar WHERE baz = %s", [self.baz])
         row = cursor.fetchone()
@@ -34,7 +37,7 @@ def createModelDatabase2(request):
             mod_db = mod_db_form.save()
             from django.urls import resolve
 
-            createTableinDB(str(resolve(request.path).app_name) +'_'+ mod_db.name)
+            #createTableinDB(str(resolve(request.path).app_name) +'_'+ mod_db.name)
         else:
             print(mod_db_form.errors)
 

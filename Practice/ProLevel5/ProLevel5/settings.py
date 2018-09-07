@@ -78,13 +78,17 @@ WSGI_APPLICATION = 'ProLevel5.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'ly',
+    #     'USER': 'admin',
+    #     'PASSWORD': 'Launchyourself@123',
+    #     'HOST' : 'localhost',
+    #     'PORT' : '3306',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ly',
-        'USER': 'admin',
-        'PASSWORD': 'Launchyourself@123',
-        'HOST' : 'localhost',
-        'PORT' : '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -139,3 +143,27 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = '/BaseApp/login/'
+
+#####################################BASEAPP Settings #################################
+
+# End the model url for which middlware run
+# Keep the Method blank if run on both GET and POST
+#
+RUN_MIDDLEWARE = [
+    {
+        'NAME':'modeldatabase',
+        'METHOD':'POST',
+        'CONDITION': 'tablename!="" and password ',
+        'OPERATION':''
+
+    },
+    {
+        'NAME':'modeldatabasefields',
+        'METHOD':'',
+        'CONDITION':'',
+        'OPERATION':''
+    },
+]
+
+
+#######################################################################################
