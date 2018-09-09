@@ -7,7 +7,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.views.generic import View,TemplateView,CreateView
 from BaseApp.models import School,Student,ModelDatabaseField,ModelDatabase
 
+from django.utils import timezone
 from django.urls import resolve
+
 #from django.db import models
 # form django.
 # Create your views here.
@@ -29,6 +31,26 @@ def createTableinDB(str_appName):
         row = cursor.fetchone()
     return row
 
+def createDynamicModel(str_app,tblName):
+    print('*** createDynamicModel called with '+ str_app + '  --  ' + tblName)
+    from django.db import models
+    tblName = 'Model'+tblName.capitalize()
+    # tblName = str_app+'_'+tblName
+    str_app = str_app +'.models'
+    attrs = {
+        '__module__':'BaseApp.models',
+        'created' : models.DateTimeField(default=timezone.now()),
+        'created_by' : models.CharField(blank=True),
+        'number': models.CharField(blank=True),
+        'updated':models.DateTimeField(blank=True),
+        'updated_by':models.CharField(),
+        'rid':models.CharField(),
+    }
+    # tblName = type(tblName,(models.Model,),attrs)
+    str2 = tblName +'= type("'+tblName+'",(models.Model,),attrs)'
+    exec(str2)
+    print('***** Model created' + tblName)
+
 def createModelDatabase2(request):
     if request.method == "POST":
         mod_db_form = ModelDatabaseForm(data=request.POST)
@@ -36,8 +58,8 @@ def createModelDatabase2(request):
         if mod_db_form.is_valid():
             mod_db = mod_db_form.save()
             from django.urls import resolve
-
-            #createTableinDB(str(resolve(request.path).app_name) +'_'+ mod_db.name)
+            createDynamicModel(str(resolve(request.path_info).app_name),mod_db.name)
+            # createTableinDB(str(resolve(request.path_info).app_name) +'_'+ mod_db.name)
         else:
             print(mod_db_form.errors)
 
