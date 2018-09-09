@@ -27,8 +27,9 @@ class CreateDBObject(object):
 
     def __call__(self,request):
         print("Befoe View called --------- IN Middleware")
-        # print("Request attributes : "+ str(request.method))
-        # print("Request app name : "+ str(request.current_app))
+
+        # print("Request method : "+ str(request.method))
+        # # print("Request app name : "+ str(request.current_app))
         # # print("Request attributes : "+ str(request.urlconf))
         # # print("Request attributes : "+ str(request.site))
         # print("Request attributes : "+ str(request.get_host()))
@@ -37,23 +38,36 @@ class CreateDBObject(object):
         # print('For loop start')
         # for x in request.POST.items():
         #     print(x)
-        print("Request attributes : "+ str(request.path_info))
-        # # print("Request body : "+ str(request.body))
+        # print("Request attributes : "+ str(request.path_info))
+        # print("Request body : "+ str(request.body))
         # print("After View Called --------\n")
         #need to check path if create tablenct
         #need to create a properly file for Constants
         run_mid = self.isModReqTblCreation(request)
-        # check if middleware required to run
-        if run_mid:
-            db_obj = ModelDBUtil()
-            tableDoesNotExist = db_obj.tableDoesNotExit(str(request.POST.get('name')))
+        #run_mid = True
+        # Collect all request required variables
+        t2 = ''
+        t2= request.POST.get('name')
+        print('At request tbl is : ')
+        print(t2)
+        tableDoesNotExist = False
+        db_obj = ModelDBUtil()
+        if run_mid and t2 != None:
+            tableDoesNotExist = db_obj.tableDoesNotExit(t2)
 
-            print('********'+ str(tableDoesNotExist))
+        # check if middleware required to run
 
         response = self.get_response(request)
         # print('What is response '+ str(response.content))
         # if tableDoesNotExist
+        # print('At Response********, table exists'+ str(tableDoesNotExist) + 'and tbl name is '+ str(t2))
+        # Creation of table
+        if tableDoesNotExist:
+            print(t2)
+            db_obj.createModInFile(t2)
+            print('At Response********, model created in model.py and database(in progress)')
 
+        # Creations/updation of attributes
 
         print(response.status_code)
         # ###Code below is not working -- seems like process_response is deprecated?

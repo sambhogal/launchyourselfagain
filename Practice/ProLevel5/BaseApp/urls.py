@@ -13,6 +13,6 @@ urlpatterns = [
     re_path(r'^create_student',views.CreateStudent.as_view(),name='create_student_url'),
 
     # re_path(r'^modeldatabase/',views.CreateModelDatabase.as_view(),name='create_modeldb_url'),
-    re_path(r'^modeldatabase/',views.createModelDatabase2,name='create_modeldb_url'),
+    re_path(r'^modeldatabase/',views.CreateModelDatabase.as_view(),name='create_modeldb_url'),
     re_path(r'^modeldatabasefields/',views.CreateModelDatabaseFields.as_view(),name='create_modeldb_fields_url'),
 ]

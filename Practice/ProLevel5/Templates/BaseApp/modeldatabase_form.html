@@ -10,7 +10,10 @@
         <h1>Create New Table</h1>
             <form method="POST">
                 {% csrf_token %}
-                {{ mod_db_form.as_p }}
+            <!--
+               {{ mod_db_form.as_p }} 
+        -->
+                {{form.as_p}}
 
                 <input type="submit" value="Create">
             </form>

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
 
 
 #Create your models here.
@@ -113,3 +114,330 @@ class Student(models.Model):
 
     def get_absolute_url(self):
         return reverse('base_app:login_url')  #To be updated when we have a view
+
+class ModelA41(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA42(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA37(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA45(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA46(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA47(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA48(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA49(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelA50(models.Model):
+    
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+
+class ModelS1(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS2(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS3(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS4(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS5(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS6(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS9(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS10(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS11(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS12(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS14(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS13(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelS34(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelSl12(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelAa(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
+class ModelSam(models.Model):
+    created = models.DateTimeField(default=timezone.now())
+    created_by = models.CharField(blank=True,max_length=100)
+    number= models.CharField(blank=True,max_length=100)
+    updated = models.DateTimeField(blank=True)
+    updated_by=models.CharField(max_length=100)
+    rid = models.CharField(max_length=100)
+    created_sam = models.DateTimeField()
+    created_by_sam = models.CharField(blank=True,max_length=100)
+    number_sam = models.CharField(blank=True,max_length=100)
+    def __str__(self):
+        return self.rid
+        
